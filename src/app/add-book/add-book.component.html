@@ -1,0 +1,20 @@
+<h2>Add book</h2>
+<form [formGroup]="bookForm" class="book-form">
+  <mat-form-field class="form-full-width">
+    <input id="title" matInput formControlName="title" placeholder="Title" required/>
+    <mat-error *ngIf="bookForm.get('title').hasError('maxlength')">Title must not have more than 30 characters</mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-full-width">
+    <mat-label>Category</mat-label>
+    <mat-select id="category" formControlName="category" required>
+      <mat-option *ngFor="let category of bookCategories" [value]="category.value">{{category.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="form-full-width">
+    <textarea id="description" matInput formControlName="description" placeholder="Description" required></textarea>
+  </mat-form-field>
+  <div class="action-container">
+    <button class="submit-button" type="button" mat-button (click)="addBook()">Add book</button>
+  </div>
+</form>

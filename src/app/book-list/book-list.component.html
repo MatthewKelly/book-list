@@ -1,0 +1,7 @@
+<h2>
+  Book list ( {{ (books$ | async).length }} )
+</h2>
+
+<div *ngFor="let book of (books$ | async)">
+  <app-book-card [book]="book"></app-book-card>
+</div>
