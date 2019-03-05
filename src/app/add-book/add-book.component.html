@@ -10,7 +10,6 @@
       <mat-option *ngFor="let category of bookCategories" [value]="category.value">{{category.label}}</mat-option>
     </mat-select>
   </mat-form-field>
-
   <mat-form-field class="form-full-width">
     <textarea id="description" matInput formControlName="description" placeholder="Description" required></textarea>
   </mat-form-field>
